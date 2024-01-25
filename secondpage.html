@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR 360 Mid-term project</title>
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="./javascript/a-frame.js"></script>
+    
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+        <img id="ground" src="./img/bg/floor_1024.jpg">
+        <img id="mainBg" src="./img/bg/backgroud.jpg"> 
+        <img src="./banner/4.jpg" id="bn4">
+        <img src="./img/F2_02.jpg" id="F022">
+        <img src="./img/F2_03.jpg" id="F023">
+        <img src="./img/F2_04.jpg" id="F024">
+    </a-assets>
+    <a-camera position="0 1 0" id="myCamera">
+        <a-cursor intersection-spawn="Event: Click; mixin:voxel;"></a-cursor>
+    </a-camera>
+       <!-- Sky -->
+       <a-sky color="#2b2d47"></a-sky>
+
+       <!-- Floor -->
+       <a-plane rotation="-90 0 0"  repeat="2 2" scale="40 40 1" src="#ground"></a-plane>
+        <!-- Description -->
+        <a-entity id="description" position="-0.5 5 -6">
+            
+            <!-- <a-text value="SWITCHING BETWEEN VIEW CONTEXT" align="center"></a-text> -->
+            <a-plane position="0 -1 0" color="#1D1E2C" width="5" height="1">
+                <a-text position="-2 0 0.01" align="left"
+                    value="You can click to choose">
+                </a-text>
+            </a-plane>
+        </a-entity>
+        <!-- <a-image src="#mainBg" width="40" height="10" position="-0.5 10 -10"></a-image> -->
+       
+        <a-entity id="selectPage" position="0 0.5 -4">
+         <!-- one -->
+         <a-entity>
+            <a-text value="Floor 1" position="2.7 2 0"></a-text>
+            <a-box position="3 0 0" color="red">
+                <a-sphere id="firstSphere" color="yellow" radius="0.25" position="0 1 0" animation__scale-up="property: scale; to: 1.5 1.5 1.5; startEvents: mouseenter; dur: 300;"
+                animation__scale-down="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 300;"
+                ></a-sphere>
+            </a-box>
+        </a-entity>
+
+            <!-- three -->
+           <a-entity>
+            <a-text value="Floor 3" position="-1.4 2 0"></a-text>
+            <a-box position="-1 0 0" color="green">
+                <a-sphere id="thirdSphere" color="yellow" radius="0.25" position="0 1 0" animation__scale-up="property: scale; to: 1.5 1.5 1.5; startEvents: mouseenter; dur: 300;"
+                animation__scale-down="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 300;"
+                ></a-sphere>
+            </a-box>
+       </a-entity>
+         <!-- four -->
+         <a-entity>
+            <a-text value="Floor 4" position="-3.4 2 0"></a-text>
+            <a-box position="-3 0 0" color="royalblue">
+                <a-sphere id="fourSphere" color="yellow" radius="0.25" position="0 1 0" animation__scale-up="property: scale; to: 1.5 1.5 1.5; startEvents: mouseenter; dur: 300;"
+                animation__scale-down="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 300;"
+                ></a-sphere>
+            </a-box>
+       </a-entity>
+       <!-- five -->
+       <a-entity>
+        <a-text value="Floor 5" position="-5.4 2 0"></a-text>
+        <a-box position="-5 0 0" color="#A020F0">
+            <a-sphere id="fiveSphere" color="yellow" radius="0.25" position="0 1 0" animation__scale-up="property: scale; to: 1.5 1.5 1.5; startEvents: mouseenter; dur: 300;"
+            animation__scale-down="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 300;"
+            ></a-sphere>
+        </a-box>
+   </a-entity>
+   <a-entity>
+     <a-image src="#F022" width="40" height="10" position="-0.5 10 -10"></a-image>
+     <a-image src="#bn4" width="40" height="10" position="25 10 10" rotation="0 -90 0"></a-image>
+     <a-image src="#F023" width="40" height="10" position="-0.5 10 30" rotation="0 -180 0 "></a-image>
+     <a-image src="#F024" width="40" height="10" position="-25 10 10" rotation="0 90 0"></a-image>
+   </a-entity>
+        </a-entity>
+  </a-scene>
+  <script src="./javascript/index.js"></script>
+    <script>
+         document
+            .querySelector("#firstSphere")
+            .addEventListener("mouseenter",e => {
+                location.href = "firstpage.html";
+            });
+
+        document
+            .querySelector("#thirdSphere")
+            .addEventListener("mouseenter",e => {
+                location.href = "thirdpage.html";
+            });
+        document
+            .querySelector("#fourSphere")
+            .addEventListener("mouseenter",e => {
+                location.href = "fourpage.html";
+            });
+        document
+            .querySelector("#fiveSphere")
+            .addEventListener("mouseenter",e => {
+                location.href = "fivepage.html";
+            });
+    </script>
+</body>
+</html>
