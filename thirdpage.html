@@ -16,6 +16,7 @@
         <img id="mainBg" src="./img/bg/backgroud.jpg"> 
         <img src="./banner/5.jpg" id="bn5">
         <img src="./img/F3_01.jpg" id="F031">
+        <audio id="river" src="sound/1.mp3" preload="auto"></audio>
     </a-assets>
     <a-camera position="0 1 0" id="myCamera">
         <a-cursor intersection-spawn="Event: Click; mixin:voxel;"></a-cursor>
@@ -83,6 +84,8 @@
      <a-image src="#bn5" width="40" height="10" position="25 10 10" rotation="0 -90 0"></a-image>
    </a-entity>
         </a-entity>
+        <a-entity id="river" geometry="primitive: plane" material="color: blue"
+          position="-10 0 0" sound="src: url(sound/1.mp3); autoplay: true"></a-entity>
   </a-scene>
   <script src="./javascript/index.js"></script>
     <script>

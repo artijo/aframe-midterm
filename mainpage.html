@@ -31,6 +31,7 @@
         <a-assets>
             <img id="ground" src="./img/bg/floor_1024.jpg">
             <img id="mainBg" src="./img/bg/backgroud.jpg"> 
+            <audio id="river" src="sound/1.mp3" preload="auto"></audio>
         </a-assets>
 <!-- 
         <a-entity id="rig" movement-controls="constrainToNavMesh: true">
@@ -110,6 +111,8 @@
            </a-entity>
             
         </a-entity>
+        <a-entity id="river" geometry="primitive: plane" material="color: blue"
+          position="-10 0 0" sound="src: url(sound/1.mp3); autoplay: true"></a-entity>
 
     </a-scene>
     <script src="./javascript/index.js"></script>
