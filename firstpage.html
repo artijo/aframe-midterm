@@ -4,24 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VR 360 Mid-term project</title>
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="./javascript/a-frame.js"></script>
+    
 </head>
 <body>
     <a-scene>
         <!-- Pre load -->
         <a-assets>
             <!-- background -->
-            <img id="bg1" src="./img/F1_01.jpg">
+            <img id="bg" src="./img/F1_02.jpg">
         
             <!-- banner -->
-            <img id="banner1" src="./banner/1.jpg">
+            <img id="banner" src="./banner/1.jpg">
+
+            <!-- icon -->
+            <img id="icon" src="./icon/play.png">
         </a-assets>
+
+       
+
+        <!-- Camera and Control -->
         <a-camera>
             <a-cursor></a-cursor>
         </a-camera>
-        <a-sky color="#808080" id="sky" radius="40" src="#bg1"></a-sky>
-    
+
+        <a-entity id="description" position="0 -5 -50">
+            <a-image src="#banner" width="60" height="40"></a-image>
+            <!-- <a-text value="SWITCHING BETWEEN VIEW CONTEXT" align="center"></a-text>
+            <a-plane position="0 -1 0" color="#1D1E2C" width="5" height="1">
+                <a-text position="-2 0 0.01" align="left"
+                    value="clicking on image will produce\nswitching between view context,\nand opening page url in iframe">
+                </a-text>
+            </a-plane>
+            <a-plane position="0 -2.1 0" color="#6A8D92" width="5" height="1">
+                <a-text position="-2 0 0.01" align="left"
+                    value="usefull case for integrating external\nfull-functional web pages, or view web\n applications without scene reload">
+                </a-text>
+            </a-plane> -->
+        </a-entity>
+        <a-entity id="panels" position="-20 -10 -20">
+            <a-box position="-1 0 0" depth="5" height="5" width="5" color="#FFAA00">
+                <!-- Add a link with an image inside the box -->
+                <a-link href="index.html">
+                    <a-image src="#homeThumbnail" width="5" height="5"></a-image>
+                </a-link>
+            </a-box>
+        </a-entity>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        <a-sky color="#808080" id="sky" radius="150" src="#bg"></a-sky>
     </a-scene>
     <script src="./javascript/index.js"></script>
 </body>
