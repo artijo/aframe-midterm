@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR 360 Mid-term project</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="./javascript/a-frame.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- Pre load -->
+        <a-assets>
+            <!-- background -->
+            <img id="bg1" src="./img/F1_01.jpg">
+        
+            <!-- banner -->
+            <img id="banner1" src="./banner/1.jpg">
+        </a-assets>
+        <a-camera>
+            <a-cursor></a-cursor>
+        </a-camera>
+        <a-sky color="#808080" id="sky" radius="40" src="#bg1"></a-sky>
+    
+    </a-scene>
+    <script src="./javascript/index.js"></script>
+</body>
+</html>
